@@ -1,16 +1,21 @@
 // Déclaration des fonctions
 
-function matchesRemoved(numberRemoved,numberTotal){
-    return remainingMatches = numberTotal-numberRemoved
-}
+function matchesRemoved(remainingMatches, numberRemoved) {
+    return remainingMatches - numberRemoved;
+};
 
 function matchesGame() {
     let remainingMatches = 50;
     while (remainingMatches > 0) {
-        let numberRemoved = parseInt(prompt(`${remainingMatches} remaining. How many matches do you wish to remove? N.B. You can't remove more than 6 matches.` ))
-        remainingMatches = matchesRemoved(numberRemoved,numberTotal)
+        let numberRemoved = parseInt(prompt(`${remainingMatches} matches remaining. How many matches do you want to remove (1-6)?`));
+        if (numberRemoved >= 1 && numberRemoved <= 6) {
+            remainingMatches = matchesRemoved(remainingMatches, numberRemoved)
+        }
+        else if (numberRemoved < 1 || numberRemoved > 6) {
+            alert("Number allowed to be removed : 1-6")
+        }
     }
-    alert("Congrats, you won!")
+    alert("Congrats, you have won!");
 };
 
 // Exécution de la fonction principale
