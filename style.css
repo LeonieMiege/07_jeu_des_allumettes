@@ -25,7 +25,7 @@ h1 {
 }
 
 h3 {
-    margin-right: 1430px;
+    margin-right: 1410px;
     background-color: #F9BE03;
     opacity: 0.9;
     border-radius: 10px;
@@ -40,40 +40,27 @@ ul {
     color: #F9BE03;
 }
 
-#currentRound {
-    margin-right: 1350px;
+#game {
+    margin-right: 800px;
     background-color: #F9BE03;
     opacity: 0.9;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-
-label[for="numberRemoved"] {
-    background-color: #FF5B52;
-    color: #3a5509;
-    font-size: 16px;
-    font-weight: bold;
+    border-radius: 10px;
 }
 
 #numberRemoved {
-    background-color: #F9BE03;
+    background-color: #ea7f7a;
     font-family: "SF pro display";
-    color: #3a5509;
-    font-weight: bold;
+    color: #962c26;
+    font-size: 16px;
 }
 
 select option {
     font-family: Helvetica;
-    color: #3a5509;
-    font-size: 14px;
-    font-weight: bold;
-  }
-
-#remainingMangoes {
-    margin-right: 1350px;
-    background-color: #F9BE03;
-    opacity: 0.9;
-    border-radius: 5px;
-    font-weight: bold;
+    color: #962c26;
+    font-size: 16px;
 }
+
+img {
+    width: 10%;
+    height: auto;
+  }

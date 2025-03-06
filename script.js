@@ -1,58 +1,38 @@
-// // Déclaration des variables
+// Déclaration des variables
 
-// let remainingMangoes = 50;
-// let currentPlayer = 1;
+let remainingMangoes = 30;
+const playerOneChoice = document.querySelector("#numberRemoved");
+const leftMangoes = document.querySelector("#remainingMangoes");
+const incorrectNumber = document.querySelector("#incorrectNumber");
+const victory = document.querySelector("#hasWon");
 
-// // Déclaration des fonctions
+// Déclaration des fonctions
 
-// function matchesRemoved(remainingMangoes, numberRemoved) {
-//     return remainingMangoes - numberRemoved;
-// };
+function currentNumberofMangoes(a, b) {
+    let result = a - b
+    return result
+}
 
-// function mangoesGame() {
-//     while (remainingMangoes > 0) {
-//         let numberRemoved = parseInt(prompt(`${remainingMangoes} 🥭 remaining ! \n\nHow many 🥭 do you want to remove (1-6)?`));
-//         if (numberRemoved >= 1 && numberRemoved <= 6 && numberRemoved <= remainingMangoes) {
-//             remainingMangoes = matchesRemoved(remainingMangoes, numberRemoved)
-//         } else if (numberRemoved < 1 || numberRemoved > 6) {
-//             alert("Number of 🥭 allowed to be removed : 1-6")
-//         }
-//     }
-//     alert("🥭🥭🥭 Congrats, you have won! 🥭🥭🥭");
+function askPlayerToRemoveMangoes() {
+    const mangoesRemoved = playerOneChoice.value;
+    if (mangoesRemoved <= remainingMangoes) {
+        remainingMangoes = currentNumberofMangoes(remainingMangoes, parseInt(mangoesRemoved));
+        leftMangoes.innerText = `🥭 Remaining mangoes : ${remainingMangoes}`;
+    } else {
+        incorrectNumber.innerText = '⚠️ The number of mangoes you have chosen is superior to the number of remaining mangoes.';
+    }
+}
 
-// };
+function mangoesGame() {
+    if (remainingMangoes > 0) {
+        askPlayerToRemoveMangoes()
+    } else if (remainingMangoes == 0) {
+        victory.innerText = '✨🎉 Congrats, you have won ✨🎉'
+    }
+}
 
-// // Exécution de la fonction principale
-
-// mangoesGame();
-
-
-// // Déclaration des variables
-
-// let remainingMangoes = 50;
-// let currentPlayer = 1;
-
-// // Déclaration des fonctions
-
-// function matchesRemoved(remainingMangoes, numberRemoved) {
-//     return remainingMangoes - numberRemoved;
-// };
-
-// function mangoesGame() {
-//     while (remainingMangoes > 0) {
-//         let numberRemoved = parseInt(prompt(`${remainingMangoes} 🥭 remaining ! \n\nHow many 🥭 do you want to remove (1-6)?`));
-//         if (numberRemoved >= 1 && numberRemoved <= 6 && numberRemoved <= remainingMangoes) {
-//             remainingMangoes = matchesRemoved(remainingMangoes, numberRemoved)
-//         } else if (numberRemoved < 1 || numberRemoved > 6) {
-//             alert("Number of 🥭 allowed to be removed : 1-6")
-//         }
-//     }
-//     alert("🥭🥭🥭 Congrats, you have won! 🥭🥭🥭");
-
-// };
-
-// // Exécution de la fonction principale
-
-// mangoesGame();
+playerOneChoice.addEventListener('change', () => {
+    mangoesGame()
+});
 
 
