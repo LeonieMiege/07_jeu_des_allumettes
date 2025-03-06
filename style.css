@@ -4,63 +4,63 @@
 }
 
 @font-face {
-    font-family: "SF pro display";
-    src: url(assets/fonts/SFPRODISPLAYREGULAR.OTF);
+    font-family: "Product Sans";
+    src: url(assets/fonts/ProductSansRegular.ttf);
 }
 
 body {
-    background-image: url(assets/images/background_image.jpg);
-    font-family: "SF pro display";
-    color: #4C7107;
+    margin-top: 150px;
+    background-image: url(assets/images/mangoes_background.jpg);
+    font-family: "Product Sans";
+    color: #136D61;
     text-align: justify;
 }
 
 h1 {
-    background-color: #F9BE03;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    background-color: #8fdbd1;
     opacity: 0.9;
     border-radius: 10px;
+    text-align: center;
     font-family: "Tropical Ground";
-    font-size: xx-large;
-    font-weight: bold
+    font-size: 30px;
+    font-weight : bolder
 }
 
-h3 {
-    margin-right: 1410px;
-    background-color: #F9BE03;
+#rules {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    background-color: #f7ae8a;
     opacity: 0.9;
     border-radius: 10px;
-    font-weight: bold;
-}
-
-ul {
-    margin-right: 800px;
-    background-color: #4C7107;
-    opacity: 0.9;
-    border-radius: 10px;
-    color: #F9BE03;
+    color: #136D61;
 }
 
 #game {
-    margin-right: 800px;
-    background-color: #F9BE03;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    background-color: #f0cf4d;
     opacity: 0.9;
     border-radius: 10px;
 }
 
+#playerTurn {
+    font-weight: bold;
+}
+
 #numberRemoved {
-    background-color: #ea7f7a;
-    font-family: "SF pro display";
-    color: #962c26;
+    background-color: #8fdbd1;
+    font-family: "Product Sans";
+    color: #0d5148;
     font-size: 16px;
 }
 
 select option {
-    font-family: Helvetica;
-    color: #962c26;
+    font-family: "Helvetica";
+    color: #0d5148;
     font-size: 16px;
 }
-
-img {
-    width: 10%;
-    height: auto;
-  }

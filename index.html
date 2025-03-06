@@ -11,18 +11,21 @@
 
 <body>
     <h1>🥭 R e m o v i n g - M a n g o e s - G a m e 🥭</h1>
-    <h3>📋 Rules</h3>
-    <ul>
-        <br>
-        <li>This is a two-player game. In turn, each player removes a number of mangoes between 1 and 6.</li>
-        <li>The winner is the player who remove the last mango.</li>
-        <br>
-    </ul>
+    <br>
+    <br>
+    <div id="rules">
+        <h3>📋 Rules</h3>
+        <ul>
+            <li>This is a two-player game. In turn, each player removes a number of mangoes between 1 and 6.</li>
+            <li>The winner is the player who remove the last mango.</li>
+            <br>
+        </ul>
+    </div>
+    <br>
     <div id="game">
         <br>
-        <div id="currentRound">🔄 Player 1's turn</div>
-        <br>
-        <label for="numberRemoved">🤏 Select the number of mangoes you want to remove (1-6) : </label>
+        <h3 id="playerTurn"></h3>
+        <label for="numberRemoved">🤏 Select the number of mangoes you want to remove : </label>
         <select id="numberRemoved">
             <option value="">Make a choice</option>
             <option value="1">1</option>
@@ -34,15 +37,13 @@
         </select>
         <br>
         <br>
-        <div id="remainingMangoes">🥭 Total number of mangoes = 30</div> 
+        <div id="remainingMangoes">🥭 Total number of mangoes = 30</div>
         <br>
         <div id="incorrectNumber"></div>
-        <br>
         <div id="hasWon"></div>
         <br>
     </div>
     <br>
-    <img src="assets/images/mangoes.jpg" alt="mangoes">
 </body>
 
 </html>
