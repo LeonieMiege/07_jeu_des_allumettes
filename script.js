@@ -14,8 +14,9 @@ const incorrectNumber = document.querySelector("#incorrectNumber");
 // Déclaration des fonctions
 
 playerChoiceSelect.disabled = true;
+startGameButton.disabled = true;
 
-function initializeGame (){
+function initializeGame() {
     totalPlayers = parseInt(playerCountSelect.value);
     currentPlayer = 1;
     remainingMangoes = 40;
@@ -65,6 +66,14 @@ function mangoesGame() {
 }
 
 // addEventListeners
+
+playerCountSelect.addEventListener("change", () => {
+    if (playerCountSelect.value !== "") {
+        startGameButton.disabled = false;
+    } else {
+        startGameButton.disabled = true;
+    }
+});
 
 startGameButton.addEventListener('click', initializeGame);
 

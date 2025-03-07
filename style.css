@@ -38,9 +38,9 @@ h2 {
     color: #136D61;
 }
 
-ul{
+ul {
     list-style-type: circle;
-  }
+}
 
 #game {
     margin: auto;
@@ -52,7 +52,7 @@ ul{
 }
 
 #startGame {
-    background-color:#189e64;
+    background-color: #189e64;
     display: inline-block;
     border: none;
     padding: 10px 10px;
@@ -68,12 +68,19 @@ ul{
     border-radius: 10rem;
 }
 
-.button:hover {background-color: #3e8e41}
+.button:hover {
+    background-color: #3e8e41
+}
 
 .button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 3px #666;
-  transform: translateY(4px);
+    background-color: #3e8e41;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 
