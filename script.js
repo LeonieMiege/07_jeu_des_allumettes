@@ -46,7 +46,11 @@ function askPlayerToRemoveMangoes() {
         incorrectNumber.innerText = '';
         if (remainingMangoes === 0) {
             leftMangoes.innerText = `🎉 Congrats, Player ${currentPlayer} has won! 🎉`;
-            playerChoiceSelect.disabled = true;
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
         } else {
             switchPlayer();
         }
