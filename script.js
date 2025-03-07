@@ -7,7 +7,6 @@ playerTurn.innerText = "🔄 Player 1's turn";
 const playerChoice = document.querySelector("#numberRemoved");
 const leftMangoes = document.querySelector("#remainingMangoes");
 const incorrectNumber = document.querySelector("#incorrectNumber");
-const hasWon = document.querySelector("#hasWon");
 
 // Déclaration des fonctions
 
@@ -31,7 +30,12 @@ function askPlayerToRemoveMangoes() {
         remainingMangoes = currentNumberofMangoes(remainingMangoes, parseInt(mangoesRemoved));
         leftMangoes.innerText = `🥭 Remaining mangoes : ${remainingMangoes}`;
         incorrectNumber.innerText = '';
-        switchPlayer()
+        if (remainingMangoes === 0) {
+            leftMangoes.innerText = `🎉 Congrats, Player ${currentPlayer} has won!`;
+            playerChoice.disabled = true;
+        } else {
+            switchPlayer();
+        }
     } else {
         incorrectNumber.innerText = '⚠️ The number of mangoes you have chosen is superior to the number of remaining mangoes.';
     }
@@ -39,11 +43,7 @@ function askPlayerToRemoveMangoes() {
 }
 
 function mangoesGame() {
-    if (remainingMangoes > 0) {
-        askPlayerToRemoveMangoes();
-    } else if (remainingMangoes === 0) {
-        hasWon.innerText = '🎉 Congrats, you have won !';
-    }
+    askPlayerToRemoveMangoes();
 }
 
 playerChoice.addEventListener('change', () => {
