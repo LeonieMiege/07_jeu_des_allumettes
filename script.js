@@ -2,11 +2,14 @@
 
 let remainingMangoes = 30;
 let currentPlayer = 1;
-const playerTurn = document.querySelector("#playerTurn")
+let totalPlayers = 2;
+const playerTurn = document.querySelector("#playerTurn");
 playerTurn.innerText = "🔄 Player 1's turn";
-const playerChoice = document.querySelector("#numberRemoved");
+const playerChoiceSelect = document.querySelector("#numberRemoved");
 const leftMangoes = document.querySelector("#remainingMangoes");
 const incorrectNumber = document.querySelector("#incorrectNumber");
+const playerCountSelect = document.querySelector("#playerCount");
+const startGameButton = document.querySelector("#StartGame");
 
 // Déclaration des fonctions
 
@@ -18,34 +21,38 @@ function currentNumberofMangoes(a, b) {
 function switchPlayer() {
     if (currentPlayer === 1) {
         currentPlayer = 2;
-    } else {
+    } else if (currentPlayer === 2) {
+        currentPlayer = 3;
+    } else if (currentPlayer === 3) {
+        currentPlayer = 4;
+    } else if (currentPlayer === 4) {
         currentPlayer = 1;
     }
     playerTurn.innerText = `🔄 Player ${currentPlayer}'s turn`;
 }
 
 function askPlayerToRemoveMangoes() {
-    const mangoesRemoved = playerChoice.value;
+    const mangoesRemoved = playerChoiceSelect.value;
     if (mangoesRemoved <= remainingMangoes) {
         remainingMangoes = currentNumberofMangoes(remainingMangoes, parseInt(mangoesRemoved));
         leftMangoes.innerText = `🥭 Remaining mangoes : ${remainingMangoes}`;
         incorrectNumber.innerText = '';
         if (remainingMangoes === 0) {
-            leftMangoes.innerText = `🎉 Congrats, Player ${currentPlayer} has won!`;
-            playerChoice.disabled = true;
+            leftMangoes.innerText = `🎉 Congrats, Player ${currentPlayer} has won! 🎉`;
+            playerChoiceSelect.disabled = true;
         } else {
             switchPlayer();
         }
     } else {
         incorrectNumber.innerText = '⚠️ The number of mangoes you have chosen is superior to the number of remaining mangoes.';
     }
-    playerChoice.value = '';
+    playerChoiceSelect.value = '';
 }
 
 function mangoesGame() {
     askPlayerToRemoveMangoes();
 }
 
-playerChoice.addEventListener('change', () => {
+playerChoiceSelect.addEventListener('change', () => {
     mangoesGame();
 });

@@ -16,35 +16,80 @@ body {
     text-align: justify;
 }
 
-h1 {
+h2 {
     margin: auto;
-    width: 50%;
-    padding: 25px;
+    width: 45%;
+    padding: 20px;
     background-color: #8fdbd1;
     opacity: 0.9;
     border-radius: 10px;
     text-align: center;
     font-family: "Tropical Ground";
-    font-size:30px;
+    font-size: 25px;
 }
 
 #rules {
     margin: auto;
-    width: 50%;
-    padding: 25px;
+    width: 45%;
+    padding: 20px;
     background-color: #f7ae8a;
     opacity: 0.9;
     border-radius: 10px;
     color: #136D61;
 }
 
+ul{
+    list-style-type: circle;
+  }
+
 #game {
     margin: auto;
-    width: 50%;
-    padding: 25px;
+    width: 45%;
+    padding: 20px;
     background-color: #f0cf4d;
     opacity: 0.9;
     border-radius: 10px;
+}
+
+#startGame {
+    background-color:#189e64;
+    display: inline-block;
+    border: none;
+    padding: 10px 10px;
+    color: #e4f4ed;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.button {
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+
+#playerCount {
+    margin-right: 20px;
+    background-color: #8fdbd1;
+    font-family: "Product Sans";
+    color: #0d5148;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+select option {
+    font-family: "Helvetica";
+    color: #0d5148;
+    font-size: 16px;
 }
 
 #numberRemoved {
@@ -52,6 +97,7 @@ h1 {
     font-family: "Product Sans";
     color: #0d5148;
     font-size: 16px;
+    cursor: pointer;
 }
 
 select option {
