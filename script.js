@@ -1,17 +1,32 @@
 // Déclaration des variables
 
-let remainingMangoes = 30;
+let remainingMangoes = 40;
 let currentPlayer = 1;
 let totalPlayers = 2;
-const playerTurn = document.querySelector("#playerTurn");
-playerTurn.innerText = "🔄 Player 1's turn";
+const playerCountSelect = document.querySelector("#playerCount");
+const startGameButton = document.querySelector("#startGame");
 const playerChoiceSelect = document.querySelector("#numberRemoved");
+const playerTurn = document.querySelector("#playerTurn");
 const leftMangoes = document.querySelector("#remainingMangoes");
 const incorrectNumber = document.querySelector("#incorrectNumber");
-const playerCountSelect = document.querySelector("#playerCount");
-const startGameButton = document.querySelector("#StartGame");
+
 
 // Déclaration des fonctions
+
+playerChoiceSelect.disabled = true;
+
+function initializeGame (){
+    totalPlayers = parseInt(playerCountSelect.value);
+    currentPlayer = 1;
+    remainingMangoes = 40;
+    playerCountSelect.disabled = true;
+    startGameButton.disabled = true;
+    playerChoiceSelect.disabled = false;
+    playerChoiceSelect.value = "";
+    playerTurn.innerText = "🔄 Player 1's turn";
+    leftMangoes.innerText = `🥭 Remaining mangoes : ${remainingMangoes}`;
+    incorrectNumber.innerText = "";
+}
 
 function currentNumberofMangoes(a, b) {
     let result = a - b;
@@ -19,15 +34,7 @@ function currentNumberofMangoes(a, b) {
 }
 
 function switchPlayer() {
-    if (currentPlayer === 1) {
-        currentPlayer = 2;
-    } else if (currentPlayer === 2) {
-        currentPlayer = 3;
-    } else if (currentPlayer === 3) {
-        currentPlayer = 4;
-    } else if (currentPlayer === 4) {
-        currentPlayer = 1;
-    }
+    currentPlayer = (currentPlayer % totalPlayers) + 1;
     playerTurn.innerText = `🔄 Player ${currentPlayer}'s turn`;
 }
 
@@ -52,6 +59,10 @@ function askPlayerToRemoveMangoes() {
 function mangoesGame() {
     askPlayerToRemoveMangoes();
 }
+
+// addEventListeners
+
+startGameButton.addEventListener('click', initializeGame);
 
 playerChoiceSelect.addEventListener('change', () => {
     mangoesGame();

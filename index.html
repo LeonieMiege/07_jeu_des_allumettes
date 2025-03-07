@@ -25,15 +25,14 @@
         <h3>🎲 G a m e</h3>
         <label for="playerCount">❔ Number of players :</label>
         <select id="playerCount">
-            <option value="">Choose</option>
-            <option value="1">1</option>
+            <option value=""selected>Choose</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
         </select>
         <button class="button" id="startGame">S t a r t</button>
         <p id="playerTurn"></p>
-        <label for="numberRemoved">🤏 Select the number of mangoes you want to remove : </label>
+        <label for="numberRemoved"disabled>🤏 Select the number of mangoes you want to remove : </label>
         <select id="numberRemoved">
             <option value="">Choose</option>
             <option value="1">1</option>
@@ -45,7 +44,7 @@
         </select>
         <br>
         <br>
-        <div id="remainingMangoes">🥭 Total number of mangoes = 30</div>
+        <div id="remainingMangoes">🥭 Total number of mangoes = 40</div>
         <br>
         <div id="incorrectNumber"></div>
     </div>
