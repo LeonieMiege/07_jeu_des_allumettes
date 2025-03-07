@@ -1,6 +1,6 @@
 // Déclaration des variables
 
-let remainingMangoes = 73;
+let remainingMangoes = 30;
 let currentPlayer = 1;
 let totalPlayers = 2;
 const playerCountSelect = document.querySelector("#playerCount");
@@ -19,7 +19,7 @@ startGameButton.disabled = true;
 function initializeGame() {
     totalPlayers = parseInt(playerCountSelect.value);
     currentPlayer = 1;
-    remainingMangoes = 73;
+    remainingMangoes = 30;
     playerCountSelect.disabled = true;
     startGameButton.disabled = true;
     playerChoiceSelect.disabled = false;
